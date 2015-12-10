@@ -19,28 +19,19 @@ Define 1 component per file.
 // avoid
 angular.module('rm')
  .controller('FirstPageCtrl', [function(){...}])
- .controller('SomeModalCtrl', [function(){...}])
  .directive('rmSomeList', [function(){...}]);
 ```
 Same components now located in separate files
 
-**first-page.controller.js**
 ```javascript
 // recommended
+// first-page.controller.js
 angular.module('rm')
  .controller('FirstPageCtrl', [function(){...}]);
 ```
 
-**some-modal.controller.js**
 ```javascript
-// recommended
-angular.module('rm')
- .controller('SomeModalCtrl', [function(){...}]);
-```
-
-**some-list.directive.js**
-```javascript
-// recommended
+// some-list.directive.js
 angular.module('rm')
  .directive('rmSomeList', [function(){...}]);
 ```
