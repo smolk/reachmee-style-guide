@@ -2,7 +2,7 @@
 
 ## Table of contents
 1. [Basic rules](#basic-rules)
-2. [File structure](#File-structure)
+2. [File structure](#file-structure)
 3. Routing
 4. Controllers
 5. Services
@@ -12,7 +12,3 @@
 
 
 # Basic rules
-opa
-
-# File structure
-opa-pa
