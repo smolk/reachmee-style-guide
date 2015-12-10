@@ -104,3 +104,4 @@ function(){...}]);
     /vendor
 ```
 
+[back to top](#angularjs-style-guide)
