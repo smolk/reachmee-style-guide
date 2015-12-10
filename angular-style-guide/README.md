@@ -28,9 +28,8 @@ Same components now located in separate files
 // first-page.controller.js
 angular.module('rm')
  .controller('FirstPageCtrl', [function(){...}]);
-```
 
-```javascript
+
 // some-list.directive.js
 angular.module('rm')
  .directive('rmSomeList', [function(){...}]);
