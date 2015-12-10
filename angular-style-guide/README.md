@@ -5,11 +5,14 @@
 2. [File structure](#file-structure)
 3. Routing
 4. Controllers
- * ControllerAs notation
- * 
+ * **ControllerAs notation**
+ * **Inheritance:** Use prototypal inheritance when extending controller classes
+ * **Methods:** Pass functions into module methods rather than assign as a callback
+ * **Size:** It is time to refactor your controller if it's bigger than 300+ lines. Business logic should be wrapped in Service or Directive.
 5. Services
 6. Directives
-7. 3d-part components
+7. [Logging](#logging)
+8. 3d-part components
 
 
 # Basic rules
@@ -55,4 +58,49 @@ angular.module('rm')
 function(){...}]);
 ```
 
+
 [back to top](#angularjs-style-guide)
+
+# File structure
+ * Create folder named for the page or sub-page they represented. 
+ * Place controller, template and all the components like services, directives, filters related to this page in the Folder. 
+### Folder-by-Page structure
+```javascript
+// recommended
+/site
+    /app-admin
+    /app-recruitment
+        app.module.js
+        app.routing.js
+        /commission-list
+        /candidate-list
+        /commission
+            /commission.controller.js
+            /commission.service.js
+            /commission-sidebar.directive.js
+            /commission-sidebar.html
+            /commission.html
+            /advertise
+            /candidate-list
+                /candidate-list.controller.js
+                /candidate-list.html
+                /candidate.service.js
+                /extended-view.directive.js
+                /extended-view.directive.html
+                /table-view.directive.js
+                /table-view.directive.html
+                /add-candidate.modal.js
+                /add-candidate.modal.html
+                /advanced-filter.modal.js
+                /advanced-filter.modal.html
+            /desciption
+            /participants
+            ...
+    /app-reports
+    /app-extview
+    /app-login
+    /directives
+    /services
+    /vendor
+```
+
