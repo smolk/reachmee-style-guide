@@ -206,3 +206,10 @@ function CandidateListController($log){
 };
 ```
 [back to top](#angularjs-style-guide)
+
+# Credits
+Working on this Style Guide I was inspired by following resources, trying to get parts that in my opinion are usefull in ReachMee project:
+* [johnpapa](https://github.com/johnpapa/angular-styleguide#controllers)
+* [toddmotto](https://github.com/toddmotto/angularjs-styleguide#controllers)
+* [airbnb](https://github.com/airbnb/javascript#naming-conventions)
+* [gocardless](https://github.com/gocardless/angularjs-style-guide#general-patterns-and-anti-patterns)
