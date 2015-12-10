@@ -55,4 +55,4 @@ angular.module('rm')
 function(){...}]);
 ```
 
-[back to the top](#angularjs-style-guide)
+[back to top](#angularjs-style-guide)
