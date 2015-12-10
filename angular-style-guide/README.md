@@ -9,3 +9,10 @@
 6. Directives
 7. 3d-part components
 8. 
+
+
+# Basic rules
+opa
+
+# File structure
+opa-pa
