@@ -103,7 +103,7 @@ function(){...}]);
 [back to top](#angularjs-style-guide)
 
 # Controllers
- * *ControllerAs notation.* Use `ControllerAs` syntax
+ * **ControllerAs notation.** Use `ControllerAs` syntax
 ```javascript
 $stateProvider.state('commission.candidate-list', {
   templateUrl: 'app-recruitment/commission/candidate-list/candidate-list.html',
@@ -143,7 +143,7 @@ function CandidateListController($log){
 };
 ```
 
-* *Methods.* Pass functions into module methods rather than assign as a callback
+* **Methods.** Pass functions into module methods rather than assign as a callback
 ```javascript
 // avoid
 angular.module('rm')
@@ -162,6 +162,6 @@ angular.module('rm')
 ]);
 function CandidateListController($log){...};
 ```
-* *Size* It is time to refactor your controller if it's bigger than `300+` lines. Business logic should be wrapped in Service or Directive.
+* **Size** It is time to refactor your controller if it's bigger than `300+` lines. Business logic should be wrapped in Service or Directive.
 
 [back to top](#angularjs-style-guide)
