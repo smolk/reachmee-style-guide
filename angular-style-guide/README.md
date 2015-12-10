@@ -5,10 +5,6 @@
 2. [File structure](#file-structure)
 3. Routing
 4. [Controllers](#controllers)
- * **ControllerAs notation**
- * **Inheritance:** Use prototypal inheritance when extending controller classes
- * **Methods:** Pass functions into module methods rather than assign as a callback
- * **Size:** It is time to refactor your controller if it's bigger than 300+ lines. Business logic should be wrapped in Service or Directive.
 5. Services
 6. Directives
 7. [Logging](#logging)
