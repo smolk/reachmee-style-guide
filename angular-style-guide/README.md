@@ -162,6 +162,47 @@ angular.module('rm')
 ]);
 function CandidateListController($log){...};
 ```
+
 * **Size** It is time to refactor your controller if it's bigger than `300+` lines. Business logic should be wrapped in Service or Directive.
 
+* **Bindable Members Up Top**
+* Place bindable members at the top of the controller, alphabetized, and not spread through the controller code.
+  * Placing bindable members at the top makes it easy to read and helps you instantly identify which members of the controller can be bound and used in the View.
+  * Setting anonymous functions in-line can be easy, but when those functions are more than 1 line of code they can reduce the readability. Defining the functions below the bindable members (the functions will be hoisted) moves the implementation details down, keeps the bindable members up top, and makes it easier to read.
+
+```javascript
+// avoid
+angular.module('rm')
+ .controller('CandidateListController', [
+ '$log',
+ CandidateListController
+]);
+function CandidateListController($log){
+ var self = this;
+ 
+ this.moveCandidate = function(){};
+ this.candidates = [];
+ this.showFilterSection = function(){};
+ 
+};
+```
+
+```javascript
+// recommended
+angular.module('rm')
+ .controller('CandidateListController', [
+ '$log',
+ CandidateListController
+]);
+function CandidateListController($log){
+ var self = this;
+ 
+ this.moveCandidate = moveCandidate;
+ this.candidates = [];
+ this.showFilterSection = showFilterSection;
+ 
+ function moveCandidate(){...}
+ function showFilterSection(){...}
+};
+```
 [back to top](#angularjs-style-guide)
