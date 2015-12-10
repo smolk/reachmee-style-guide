@@ -4,7 +4,7 @@
 1. [Basic rules](#basic-rules)
 2. [File structure](#file-structure)
 3. Routing
-4. Controllers
+4. [Controllers](#controllers)
  * **ControllerAs notation**
  * **Inheritance:** Use prototypal inheritance when extending controller classes
  * **Methods:** Pass functions into module methods rather than assign as a callback
@@ -103,5 +103,69 @@ function(){...}]);
     /services
     /vendor
 ```
+
+[back to top](#angularjs-style-guide)
+
+# Controllers
+ * *ControllerAs notation.* Use 'ControllerAs' syntax
+```javascript
+$stateProvider.state('commission.candidate-list', {
+  templateUrl: 'app-recruitment/commission/candidate-list/candidate-list.html',
+  controller: 'CandidateListController',
+  controllerAs: 'candidateList'
+})
+```
+
+* In the DOM we get a variable per controller, which aids nested controller methods, avoiding any $parent calls
+* Try to avoid using '$scope' in the controllers. Use 'this' captured by 'self' if needed.
+* 'this' gets bound to '$scope' always
+```javascript
+// avoid
+angular.module('rm')
+ .controller('CandidateListController', [
+ '$scope',
+ '$log',
+ CandidateListController
+]);
+
+function CandidateListController($scope, $log){
+ $scope.bntClick = function(){};
+}
+```
+
+```javascript
+// recommended
+angular.module('rm')
+ .controller('CandidateListController', [
+ '$log',
+ CandidateListController
+]);
+
+function CandidateListController($log){
+ var self = this;
+ self.bntClick = function(){};
+};
+```
+
+* *Methods.* Pass functions into module methods rather than assign as a callback
+```javascript
+// avoid
+angular.module('rm')
+ .controller('CandidateListController', [
+ '$scope',
+ '$log',
+function($scope, $log){...}]);
+```
+
+```javascript
+// recommended
+angular.module('rm')
+ .controller('CandidateListController', [
+ '$log',
+ CandidateListController
+]);
+function CandidateListController($log){...};
+```
+* *Size* It is time to refactor your controller if it's bigger than '300+' lines. Business logic should be wrapped in Service or Directive.
 
 [back to top](#angularjs-style-guide)
