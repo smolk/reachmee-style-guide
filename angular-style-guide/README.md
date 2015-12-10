@@ -14,7 +14,7 @@
 
 # Basic rules
 ### Single responsibility
-Define 1 component per file.
+ * Define 1 component per file.
 
 The following example defines the app module, defines a controller, and defines a directive all in the same file.
 ```javascript
@@ -37,7 +37,7 @@ angular.module('rm')
  .directive('rmSomeList', [function(){...}]);
 ```
 
-Avoid one-line dependency injection
+ * Avoid one-line dependency injection
 ```javascript
 // avoid
 angular.module('rm')
