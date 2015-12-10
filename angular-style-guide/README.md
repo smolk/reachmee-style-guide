@@ -107,7 +107,7 @@ function(){...}]);
 [back to top](#angularjs-style-guide)
 
 # Controllers
- * *ControllerAs notation.* Use 'ControllerAs' syntax
+ * *ControllerAs notation.* Use `ControllerAs` syntax
 ```javascript
 $stateProvider.state('commission.candidate-list', {
   templateUrl: 'app-recruitment/commission/candidate-list/candidate-list.html',
@@ -117,8 +117,8 @@ $stateProvider.state('commission.candidate-list', {
 ```
 
 * In the DOM we get a variable per controller, which aids nested controller methods, avoiding any $parent calls
-* Try to avoid using '$scope' in the controllers. Use 'this' captured by 'self' if needed.
-* 'this' gets bound to '$scope' always
+* Try to avoid using `$scope` in the controllers. Use `this` captured by `self` if needed.
+* `this` gets bound to `$scope` always
 ```javascript
 // avoid
 angular.module('rm')
@@ -166,6 +166,6 @@ angular.module('rm')
 ]);
 function CandidateListController($log){...};
 ```
-* *Size* It is time to refactor your controller if it's bigger than '300+' lines. Business logic should be wrapped in Service or Directive.
+* *Size* It is time to refactor your controller if it's bigger than `300+` lines. Business logic should be wrapped in Service or Directive.
 
 [back to top](#angularjs-style-guide)
