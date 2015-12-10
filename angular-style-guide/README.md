@@ -37,7 +37,7 @@ angular.module('rm')
  .directive('rmSomeList', [function(){...}]);
 ```
 
- ### Avoid one-line dependency injection
+### Avoid one-line dependency injection
 ```javascript
 // avoid
 angular.module('rm')
