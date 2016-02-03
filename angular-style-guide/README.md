@@ -108,12 +108,12 @@ function(){...}]);
 $stateProvider.state('commission.candidate-list', {
   templateUrl: 'app-recruitment/commission/candidate-list/candidate-list.html',
   controller: 'CandidateListController',
-  controllerAs: 'candidateList'
+  controllerAs: 'ctrl' // ctrl_[name] - for controllers that will have subviews to make it accessible
 })
 ```
 
 * In the DOM we get a variable per controller, which aids nested controller methods, avoiding any $parent calls
-* Try to avoid using `$scope` in the controllers. Use `this` captured by `self` if needed.
+* Use `$scope` only for creating watchers `$scope.$watch`otherwise use `this` captured by `self`.
 * `this` gets bound to `$scope` always
 ```javascript
 // avoid
@@ -121,10 +121,10 @@ angular.module('rm')
  .controller('CandidateListController', [
  '$scope',
  '$log',
- CandidateListController
+ controller
 ]);
 
-function CandidateListController($scope, $log){
+function controller($scope, $log){
  $scope.bntClick = function(){};
 }
 ```
@@ -134,10 +134,10 @@ function CandidateListController($scope, $log){
 angular.module('rm')
  .controller('CandidateListController', [
  '$log',
- CandidateListController
+ controller
 ]);
 
-function CandidateListController($log){
+function controller($log){
  var self = this;
  self.bntClick = function(){};
 };
@@ -158,9 +158,9 @@ function($scope, $log){...}]);
 angular.module('rm')
  .controller('CandidateListController', [
  '$log',
- CandidateListController
+ controller
 ]);
-function CandidateListController($log){...};
+function controller($log){...};
 ```
 
 * **Size** It is time to refactor your controller if it's bigger than `300+` lines. Business logic should be wrapped in Service or Directive.
@@ -175,9 +175,9 @@ function CandidateListController($log){...};
 angular.module('rm')
  .controller('CandidateListController', [
  '$log',
- CandidateListController
+ controller
 ]);
-function CandidateListController($log){
+function controller($log){
  var self = this;
  
  this.moveCandidate = function(){};
@@ -192,19 +192,38 @@ function CandidateListController($log){
 angular.module('rm')
  .controller('CandidateListController', [
  '$log',
- CandidateListController
+ controller
 ]);
-function CandidateListController($log){
+function controller($log){
  var self = this;
  
- this.moveCandidate = moveCandidate;
- this.candidates = [];
- this.showFilterSection = showFilterSection;
+ self.moveCandidate = moveCandidate;
+ self.candidates = [];
+ self.showFilterSection = showFilterSection;
  
  function moveCandidate(){...}
  function showFilterSection(){...}
 };
 ```
+[back to top](#angularjs-style-guide)
+
+# Directives
+ * **ControllerAs notation.** Use `ControllerAs` syntax
+```javascript
+angular.module('rm')
+    .directive('rmProcessFoldersHorizontal', function(){
+        return directive = {
+            restrict: 'A',
+            templateUrl: 'template.directive.html',
+            controllerAs: 'vm',
+            controller: [
+                '$log',
+                controller
+            ]
+        };
+    });
+```
+
 [back to top](#angularjs-style-guide)
 
 # Credits
