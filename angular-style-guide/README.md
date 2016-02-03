@@ -6,7 +6,7 @@
 3. Routing
 4. [Controllers](#controllers)
 5. Services
-6. Directives
+6. [Directives](#directives)
 7. [Logging](#logging)
 8. 3d-part components
 
@@ -223,6 +223,17 @@ angular.module('rm')
         };
     });
 ```
+
+[back to top](#angularjs-style-guide)
+
+# Logging
+ * using `$log` service instead of browser `console` to print or debug is preferable as it can be configured per environment
+```javascript
+ ...
+ $logProvider.debugEnabled(false);
+ ...
+``` 
+
 
 [back to top](#angularjs-style-guide)
 
