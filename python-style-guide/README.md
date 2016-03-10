@@ -23,6 +23,7 @@
   ...
  /dbhelper
 ```
+[back to top](#python-flask-restful-style-guide)
 
 # Error handling
 ## API Error states
@@ -53,7 +54,6 @@ class ProfileImageWebapi(Resource):
         ...
 ```
 
-
 ## Facade Error states
 Do not return **None**, **False** etc values in case if some single object is not found in DB. Raise custom or generic exception instead
 
@@ -79,3 +79,4 @@ def getExtUserByEmail(self, email):
         result = u[0]
         return result
 ```
+[back to top](#python-flask-restful-style-guide)
