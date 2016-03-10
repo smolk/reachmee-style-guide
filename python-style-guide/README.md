@@ -1,12 +1,12 @@
 # Python FLASK-restful Style Guide
 ## Table of contents
 1. Basic rules
-2. [File structure](file-structure)
+2. [File structure](#file-structure)
 3. Permission model
 4. Resources
 5. DB Helper
 6. Logging
-7. [Error handling](error-handling)
+7. [Error handling](#error-handling)
 
 # File structure
 
