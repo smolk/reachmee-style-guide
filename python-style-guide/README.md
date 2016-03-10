@@ -50,7 +50,7 @@ class ProfileImageWebapi(Resource):
 
         fullPath = extuser.getPersonalImagePath(id)
         if not fullPath:
-            return abort(404)
+            abort(404)
         ...
 ```
 
