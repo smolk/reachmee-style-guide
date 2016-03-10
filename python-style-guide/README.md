@@ -12,17 +12,16 @@
 
 ``` python
 /api
-|-/restapi
-|--/admin
-|---...
-|--/commission
-|---candidates.py # so REST service /api/commission/<int:id>/candidates located here
-|---...
-|--/reports
-|--extuser.py
-|--...
-|-/dbhelper
-
+ /restapi
+  /admin
+   ...
+  /commission
+   candidates.py # so REST service /api/commission/<int:id>/candidates located here
+   ...
+  /reports
+  extuser.py
+  ...
+ /dbhelper
 ```
 
 # Error handling
